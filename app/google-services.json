@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "829072019346",
+    "firebase_url": "https://example-6f90b-default-rtdb.firebaseio.com",
+    "project_id": "example-6f90b",
+    "storage_bucket": "example-6f90b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829072019346:android:cab832931b8353976e3b4b",
+        "android_client_info": {
+          "package_name": "com.etcetera.quotology"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5j18YMFUWeXssxbaIeG319r517-p4bng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829072019346:android:19d40c8085c315a96e3b4b",
+        "android_client_info": {
+          "package_name": "com.xxx.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5j18YMFUWeXssxbaIeG319r517-p4bng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
