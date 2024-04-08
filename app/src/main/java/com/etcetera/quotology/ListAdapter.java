@@ -5,33 +5,25 @@ import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ListAdapter extends BaseAdapter {
+import org.w3c.dom.Text;
+
+import java.util.List;
+
+public class ListAdapter extends ArrayAdapter<Quote> {
     Context Contexto;
-    String[] Nombres, Horas, Descripciones;
-    Boolean[] Reenviado;
-    boolean[] Leido;
-    int[] imageID;
+    private List<Quote> quoteList;
     LayoutInflater inflater;
 
-    public ListAdapter(Context contexto, String[] nombres, String[] horas, int[] imageID, String[] descripciones, Boolean[] reenviado, boolean[] leido){
+    public ListAdapter(Context contexto, List<Quote> quoteList){
+        super(contexto, R.layout.quote_item, quoteList);
         this.Contexto = contexto;
-        this.Nombres = nombres;
-        this.Descripciones = descripciones;
+        this.quoteList = quoteList;
         inflater = LayoutInflater.from(contexto);
-    }
-
-    @Override
-    public int getCount(){
-        return Nombres.length;
-    }
-
-    @Override
-    public Object getItem(int i){
-        return null;
     }
 
     @Override
@@ -39,14 +31,29 @@ public class ListAdapter extends BaseAdapter {
         return 0;
     }
 
-    public View getView(int i, View view, ViewGroup viewGroup){
+    public View getView(int i, View convertView, ViewGroup parent){
+        ViewHolder viewHolder;
 
-        TextView nombreEmisor = view.findViewById(R.id.nombre);
-        TextView quote = view.findViewById(R.id.quote);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(Contexto).inflate(R.layout.quote_item, parent, false);
+            viewHolder = new ViewHolder();
+            viewHolder.authorTextView = convertView.findViewById(R.id.autor);
+            viewHolder.quoteTextView = convertView.findViewById(R.id.quote);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
 
-        
+        Quote quote = quoteList.get(i);
+        viewHolder.authorTextView.setText(quote.getAuthor());
+        viewHolder.quoteTextView.setText(quote.getQuote());
 
-        return view;
+        return convertView;
+    }
+
+    static class ViewHolder{
+        TextView authorTextView;
+        TextView quoteTextView;
     }
 
 }
