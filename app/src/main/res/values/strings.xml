@@ -2,7 +2,4 @@
     <string name="app_name">Quotology</string>
     <string name="default_name">Autor del quote</string>
     <string name="default_quote">Quote</string>
-    <string name="default_hour">4:20Pm</string>
-    <string name="default_resent">Default resent</string>
-    <string name="main_title">owasp Email</string>
 </resources>
